@@ -6,20 +6,21 @@ class Poo
 private:
 	int x;
 	int y;
-	void ClampToScreen();
-public:
-	static constexpr int height = 24;
-	static constexpr int width = 24;
 	bool incX;
 	bool incY;
-
-public:
+	void ClampToScreen();
 	bool eaten;
-	Poo();
-	Poo(int x, int y, bool incX, bool incY);
-	int GetX();
-	int GetY();
+	static constexpr int height = 24;
+	static constexpr int width = 24;
+	bool initialed = false;
+public:
+	static int GetHeight();
+	static int GetWidth();
+	void Init(int x, int y, bool incX, bool incY);
 	void Update();
-	void Consumtion(Dude dude);
+	bool IsEaten() const;
+	void Consumtion(const Dude& dude);
+	void Draw(Graphics& gfx) const;
+	bool IsInitialed();
 };
 

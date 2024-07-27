@@ -24,10 +24,9 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include <vector>
-#include "Dude.h"
-#include "Poo.h"
 #include <random>
-#include "Rect.h"
+#include "Board.h"
+#include "Snake.h"
 
 class Game
 {
@@ -42,9 +41,6 @@ private:
 	/********************************/
 	/*  User Functions              */
 	/********************************/
-	void UpdateDude();
-	void DrawTitle(unsigned int x, unsigned int y);
-	void DrawGameOver(unsigned int x, unsigned int y);
 private:
 	MainWindow& wnd;
 	Graphics gfx;
@@ -61,9 +57,9 @@ private:
 	std::uniform_int_distribution<int> distrX; // define the range
 	std::uniform_int_distribution<int> distrY; // define the range
 	std::uniform_int_distribution<int> distrBool;
-	Dude dude;
-	Rect scoreBar;
-	Rect object;
-	Poo poo[5];
+	Board board;
+	Snake snake;
 	int score = 0;
+	const int totalFrame = 10;
+	int frame = 0;
 };
