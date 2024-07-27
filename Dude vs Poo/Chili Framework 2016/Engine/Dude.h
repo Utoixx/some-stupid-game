@@ -6,13 +6,15 @@ private:
 	int x; 
 	int y;
 	void ClampToScreen();
-public:
 	static constexpr int height = 20;
 	static constexpr int width = 20;
-	Dude();
+public:
+	static int GetWidth();
+	static int GetHeight();
 	Dude(int x, int y);
 	void Update(int x, int y);
-	int GetX();
-	int GetY();
+	int GetX() const;
+	int GetY() const;
+	void Draw(Graphics& gfx) const;
 };
 

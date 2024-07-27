@@ -1,1 +1,1 @@
-Some games I made using ChiliFramwork for fun!
+Some game I made using ChiliFramwork for fun!
